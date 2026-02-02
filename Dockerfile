@@ -2,7 +2,7 @@ FROM golang:1.22-alpine AS build
 WORKDIR /src
 
 # Needed only for fetching the source
-RUN apk add --no-cache git ca-certificates
+RUN apk add --no-cache git ca-certificates curl
 
 # Pull external repo (shallow clone to reduce build-time download)
 RUN git clone --depth 1 https://github.com/hashicorp/demo-consul-101.git
